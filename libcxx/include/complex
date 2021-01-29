@@ -714,11 +714,13 @@ namespace detail {
         return scalbn(__x, __i);
     }
 
+#ifndef _LIBCUDACXX_COMPILER_NVRTC
     template <>
     inline _LIBCUDACXX_INLINE_VISIBILITY
     long double __scalbn<long double>(long double __x, int __i) {
         return scalbnl(__x, __i);
     }
+#endif
 }
 
 template<class _Tp>
